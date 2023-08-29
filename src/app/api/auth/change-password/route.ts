@@ -48,6 +48,7 @@ export async function POST(request: NextRequest) {
       // @ts-ignore
       const { data } = isTokenValid;
 
+      console.log(data)
       const userFind = await User.findById(data.userId);
 
       // Validamos que exista el usuario

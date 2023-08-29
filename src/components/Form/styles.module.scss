@@ -1,0 +1,21 @@
+.form {
+    width: fit-content;
+    padding: 2rem;
+    border: .5px solid #878787;
+    border-radius: 10px;
+    min-width: 450px;
+
+    .descriptionContainer {
+        text-align: left;
+
+        h2 {
+            font-weight: 700;
+            font-size: 25px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+}

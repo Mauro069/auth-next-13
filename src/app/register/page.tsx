@@ -8,10 +8,10 @@ export default function LoginPage () {
   const { finishLoading, isLoading, startLoading } = useLoading()
   const authFetch = useAuthFetch()
 
-  const login = async (formData: any) => {
+  const register = async (formData: any) => {
     startLoading()
     await authFetch({
-      endpoint: 'login',
+      endpoint: 'register',
       redirectRoute: '/home',
       formData
     })
@@ -21,9 +21,9 @@ export default function LoginPage () {
   return (
     <>
       <Form
-        title='Inicia Sesión'
-        onSubmit={login}
-        description='Formulario para iniciar sesión'
+        title='Registrate'
+        onSubmit={register}
+        description='Formulario para crear una cuenta'
       >
         <div className='my-[10px] flex flex-col gap-4'>
           <Form.Input
@@ -37,17 +37,18 @@ export default function LoginPage () {
             name='password'
             type='password'
           />
+          <Form.Input
+            placeholder='Repite tu contraseña...'
+            label='Contraseña'
+            name='confirmPassword'
+            type='password'
+          />
         </div>
-        <Form.SubmitButton buttonText='Iniciar Sesión' isLoading={isLoading} />
+        <Form.SubmitButton buttonText='Crear cuenta' isLoading={isLoading} />
         <Form.Footer
-          description='Te olvidate tu contraseña?'
-          link='/forget-password'
-          textLink='Recuperar contraseña'
-        />
-        <Form.Footer
-          description='Aun no tienes cuenta?'
-          link='/register'
-          textLink='Registrate'
+          description='Ya tienes cuenta?'
+          textLink='Inicia Sesión'
+          link='/'
         />
       </Form>
     </>

@@ -1,0 +1,39 @@
+.notification {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 1rem;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  animation: start 0.5s forwards;
+
+  height: 50px;
+  width: fit-content;
+  padding: .6rem 1rem;
+  transition: .3s;
+
+  border: .5px solid #878787;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+  outline: .5px solid transparent;
+
+  &.success {
+    outline: 1.5px solid greenyellow;
+  }
+
+  &.error {
+    outline: 1.5px solid orangered;
+  }
+}
+
+@keyframes start {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 0%;
+  }
+}
